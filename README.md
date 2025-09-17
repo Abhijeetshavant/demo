@@ -40,3 +40,19 @@ export default page;
 #useContext Hook 
 useContext is a React Hook that allows you access data from any component without explicitly passing it down through props at every level
 => useContext is used to manage Global data in the react app
+=>src/Context/App.Context.jsx import { createContext } from "react";
+
+export const AppContext = createContext();
+
+const ContextProvider = (props) => {
+  const phone = "+1 123456789";
+  const name = "Abhijeet";
+  return (
+    <AppContext.Provider value={{ phone, name }}>
+      {props.children}
+    </AppContext.Provider>
+  );
+};
+export default ContextProvider;
+
+=>src/Context/
